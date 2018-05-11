@@ -4,7 +4,7 @@
       My News App
     </ion-title>
     <ion-buttons end>
-        <button ion-button icon-only>
+        <button ion-button icon-only [navPush]="settingsPage">
           <ion-icon name="settings"></ion-icon>
         </button>
       </ion-buttons>
@@ -13,7 +13,7 @@
 
 <ion-content padding>
   <h1>Welcome</h1>
-  <button ion-button round item-end icon-left>
+  <button ion-button round item-end icon-left [navPush]="newsPage">
     <ion-icon name="md-globe"></ion-icon>
     News
   </button>
