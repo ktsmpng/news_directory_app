@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NewsapiProvider} from '../../providers/newsapi/newsapi';
 
 /**
  * Generated class for the NewsPage page.
@@ -14,12 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news.html',
 })
 export class NewsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  articles: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public newsapiProvider: NewsapiProvider) {
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
+    this.newsapiProvider.getArticles().subscribe(data=>{
+      this.articles = data.articles;
+    });
   }
 
 }

@@ -13,6 +13,11 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h1>This is the News Page</h1>
-</ion-content>
+<ion-content>
+    <ion-list inset>
+      <ion-item *ngFor="let a of articles">
+        <h2>{{a.title}}</h2>
+        <p>{{a.description}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
