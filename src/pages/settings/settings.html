@@ -14,5 +14,95 @@
 
 
 <ion-content padding>
-  <h1>This is the settings page</h1>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Enter Name</ion-label>
+      <ion-input type="text" placeholder="Name"></ion-input>
+    </ion-item>
+  </ion-list>
+  <h1>News Sources</h1>
+  <ion-list radio-group>
+      <ion-list-header>
+        Source
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>Reuters</ion-label>
+        <ion-radio checked="true" value="go"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>National Geographic</ion-label>
+        <ion-radio value="rust"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>BBC Sport</ion-label>
+        <ion-radio value="python"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <h1>Font Size</h1>
+    <ion-list radio-group>
+      <ion-list-header>
+        Title
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>1</ion-label>
+        <ion-radio checked="true" value="go"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>2</ion-label>
+        <ion-radio value="rust"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>3</ion-label>
+        <ion-radio value="python"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>4</ion-label>
+          <ion-radio ></ion-radio>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>5</ion-label>
+          <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <ion-list-header>
+          Description
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>1</ion-label>
+          <ion-radio checked="true" value="go"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>2</ion-label>
+          <ion-radio value="rust"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>3</ion-label>
+          <ion-radio value="python"></ion-radio>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>4</ion-label>
+            <ion-radio ></ion-radio>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>5</ion-label>
+            <ion-radio></ion-radio>
+        </ion-item>
+    </ion-list>
+    <button ion-button round>
+        Save
+    </button>
 </ion-content>
