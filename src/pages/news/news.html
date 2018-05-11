@@ -15,9 +15,19 @@
 
 <ion-content>
     <ion-list inset>
-      <ion-item *ngFor="let a of articles">
-        <h2>{{a.title}}</h2>
-        <p>{{a.description}}</p>
-      </ion-item>
+
+        <ion-card *ngFor="let a of articles"> 
+          <a href="{{ a.url }}">
+            <img src="{{ a.urlToImage }}"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{ a.title }}
+              </ion-card-title>
+              <p>
+                {{a.description}}
+              </p>
+            </ion-card-content>
+          </a>
+        </ion-card>
     </ion-list>
   </ion-content>
