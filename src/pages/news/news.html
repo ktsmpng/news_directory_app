@@ -19,10 +19,10 @@
           <a href="{{ a.url }}">
             <img src="{{ a.urlToImage }}"/>
             <ion-card-content>
-              <ion-card-title>
-                {{ a.title }}
+              <ion-card-title> 
+                <h1 [style.font-size]="titlesize">{{ a.title }}</h1>
               </ion-card-title>
-              <p>
+              <p [style.font-size]="descriptionsize">
                 {{a.description}}
               </p>
             </ion-card-content>

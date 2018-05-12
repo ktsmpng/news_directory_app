@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewsapiProvider} from '../../providers/newsapi/newsapi';
-
+import {Storage} from '@ionic/storage';
 /**
  * Generated class for the NewsPage page.
  *
@@ -16,14 +16,35 @@ import { NewsapiProvider} from '../../providers/newsapi/newsapi';
 })
 export class NewsPage {
   articles: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public newsapiProvider: NewsapiProvider) {
+  titlesize: number;
+  descriptionsize: number;
+  source: string;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public newsapiProvider: NewsapiProvider, private storage: Storage) {
     
   }
 
   ionViewDidLoad() {
-    this.newsapiProvider.getArticles().subscribe(data=>{
-      this.articles = data.articles;
-    });
+    
+    this.storage.get("fontSizeTitle")
+      .then((data)=>{
+        this.titlesize = data;
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
+    this.storage.get("fontSizeDescription")
+      .then((data)=>{
+        this.descriptionsize = data;
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
+
+    this.storage.get("source")
+      .then((data)=>{
+        this.newsapiProvider.getArticles(data).subscribe(data2=>{
+          this.articles = data2.articles;
+        });
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
+      
   }
 
 }
