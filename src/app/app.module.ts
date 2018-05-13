@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { NewsPage} from '../pages/news/news';
 import { SettingsPage} from '../pages/settings/settings';
 import { NewsapiProvider } from '../providers/newsapi/newsapi';
+import { QuoteapiProvider } from '../providers/quoteapi/quoteapi';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewsapiProvider } from '../providers/newsapi/newsapi';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NewsapiProvider
+    NewsapiProvider,
+    QuoteapiProvider
   ]
 })
 export class AppModule {}

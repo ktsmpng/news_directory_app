@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { NewsPage} from '../news/news';
 import { SettingsPage} from '../settings/settings';
 import { Storage } from '@ionic/storage';
+import { QuoteapiProvider } from '../../providers/quoteapi/quoteapi';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,9 @@ export class HomePage {
   newsPage = NewsPage;
   settingsPage = SettingsPage;
   myName: string;
-  constructor(public navCtrl: NavController,public storage: Storage) {
+  myquote:string;
+  myquoteauthor: string;
+  constructor(public navCtrl: NavController,public quoteapiProvider: QuoteapiProvider, public storage: Storage) {
 
   }
 
@@ -26,5 +29,10 @@ export class HomePage {
       }
     })
     .catch((error)=> alert("Problem accessing local storage"));
+    this.quoteapiProvider.getArticles().subscribe(data=>{
+      this.myquote = data.contents.quotes[0].quote;
+      this.myquoteauthor = data.contents.quotes[0].author;
+    });
+    
   }
 }

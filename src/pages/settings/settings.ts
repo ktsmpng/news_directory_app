@@ -33,6 +33,22 @@ export class SettingsPage {
       }
     })
     .catch((error)=> alert("Problem accessing local storage"));
+    this.storage.get("fontSizeTitle")
+      .then((data)=>{
+        this.fontSizeTitle = data;
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
+    this.storage.get("fontSizeDescription")
+      .then((data)=>{
+        this.fontSizeDescription = data;
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
+
+    this.storage.get("source")
+      .then((data)=>{
+        this.source = data;
+      })
+      .catch((error)=> alert("Problem accessing local storage"));
   }
 
   save(){
